@@ -17,7 +17,14 @@ payload:
   - DOMAIN-SUFFIX,speed.dler.io
   - DOMAIN-SUFFIX,openspeedtest.com
   - DOMAIN-SUFFIX,cachefly.net
+  - DOMAIN-SUFFIX,broadbandspeedchecker.co.uk
+  - DOMAIN-SUFFIX,loadingtest.com
+  - DOMAIN-SUFFIX,testmy.net
+  - DOMAIN-SUFFIX,proof.ovh.net
   - DOMAIN-KEYWORD,speedtest
   - DOMAIN-KEYWORD,speedtestcustom
   - DOMAIN-KEYWORD,openspeedtest
+  - DOMAIN-KEYWORD,speedchecker
+  - DOMAIN-KEYWORD,iperf
   - DST-PORT,8080
+  - DST-PORT,8088
