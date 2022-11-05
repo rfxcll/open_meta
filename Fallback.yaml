@@ -67,7 +67,6 @@ proxy-groups:
 - name: Direct WAN C
   type: select
   interface-name: eth1
-  interface-name: eth1
   proxies:
   - DIRECT
 - name: Koneksi PortGames
@@ -205,11 +204,15 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   nameserver:
-  - https://dns.cloudflare.com/dns-query
-  - tls://8.8.8.8:853
+  - 1.1.1.1
+  - 8.8.8.8
+  - udp://1.1.1.1
+  - udp://8.8.8.8
   fallback:
-  - https://dns.google/dns-query
-  - tls://1.1.1.1:853
+  - 1.1.1.1
+  - 8.8.8.8
+  - udp://1.1.1.1
+  - udp://8.8.8.8
   fallback-filter:
     geoip: true
     geoip-code: ID
