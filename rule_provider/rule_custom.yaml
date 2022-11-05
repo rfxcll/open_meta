@@ -1,0 +1,3 @@
+payload:
+# Bypass AdBlock
+ - DOMAIN-SUFFIX,pagead2.googlesyndication.com
