@@ -1,53 +1,53 @@
 ---
 proxy-providers:
-  VVIP-IPTUNNELS-ID:
+  ID:
     type: file
-    path: "./proxy_provider/vvip-id.yaml"
+    path: "./proxy_provider/Akun-ID.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 180
-  VVIP-IPTUNNELS-SG:
+  SG:
     type: file
-    path: "./proxy_provider/vvip-sg.yaml"
+    path: "./proxy_provider/Akun-SG.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 180
-  VVIP-IPTUNNELS-GAME:
+  GAME:
     type: file
-    path: "./proxy_provider/vvip-game.yaml"
+    path: "./proxy_provider/Akun-GAME.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 180
 proxy-groups:
-- name: Route VVIP ID
+- name: Jalur ID
   type: load-balance
   strategy: round-robin
   use:
-  - VVIP-IPTUNNELS-ID
+  - ID
   url: http://www.gstatic.com/generate_204
   interval: 360
-- name: Route VVIP SG
+- name: Jalur SG
   type: load-balance
   strategy: round-robin
   use:
-  - VVIP-IPTUNNELS-SG
+  - SG
   url: http://www.gstatic.com/generate_204
   interval: 360
-- name: Route VVIP GAME
+- name: Jalur GAME
   type: url-test
   use:
-  - VVIP-IPTUNNELS-GAME
+  - GAME
   url: http://www.gstatic.com/generate_204
   interval: 600
-- name: TrafficDirect
+- name: Koneksi Direct
   type: select
   proxies:
   - Direct Multi-WAN
-  - Route VVIP ID
-  - Route VVIP SG
+  - Jalur ID
+  - Jalur SG
 - name: Direct Multi-WAN
   type: select
   proxies:
@@ -56,79 +56,80 @@ proxy-groups:
   - Direct WAN C
 - name: Direct WAN A
   type: select
-  interface-name: eth1
+  interface-name: wwan0
   proxies:
   - DIRECT
 - name: Direct WAN B
   type: select
-  interface-name: wlan0
+  interface-name: eth0
   proxies:
   - DIRECT
 - name: Direct WAN C
   type: select
-  interface-name: eth2
+  interface-name: eth1
+  interface-name: eth1
   proxies:
   - DIRECT
-- name: TrafficPortGames
+- name: Koneksi PortGames
   type: select
   proxies:
-  - TrafficDirect
-  - Route VVIP GAME
-- name: TrafficGaming
+  - Koneksi Direct
+  - Jalur GAME
+- name: Koneksi Gaming
   type: select
   proxies:
-  - Route VVIP GAME
-  - TrafficDirect
+  - Jalur GAME
+  - Koneksi Direct
   - Direct WAN A
   - Direct WAN B
   - Direct WAN C
   use:
-  - VVIP-IPTUNNELS-GAME
-- name: TrafficAds
+  - Akun-GAME
+- name: Koneksi Ads
   type: select
   proxies:
   - REJECT
-  - Route VVIP SG
-  - Route VVIP ID
-- name: TrafficPorn
+  - Jalur SG
+  - Jalur ID
+- name: Koneksi NSFW
   type: select
   proxies:
   - REJECT
-  - Route VVIP SG
-  - Route VVIP ID
-- name: TrafficUmum
+  - Jalur SG
+  - Jalur ID
+- name: Koneksi Umum
   type: fallback
   lazy: true
   proxies:
-  - Route VVIP SG
-  - Route VVIP ID
+  - Jalur SG
+  - Jalur ID
   - Direct Multi-WAN
   url: http://www.gstatic.com/generate_204
   interval: 30
-- name: TrafficIndo
+- name: Koneksi Indo
   type: fallback
   lazy: true
   proxies:
-  - Route VVIP ID
-  - Route VVIP SG
-  - TrafficDirect
+  - Jalur ID
+  - Jalur SG
+  - Koneksi Direct
   url: http://www.gstatic.com/generate_204
   interval: 30
-- name: TrafficStreaming
+- name: Koneksi Streaming
   type: fallback
   lazy: true
   proxies:
-  - Route VVIP SG
-  - Route VVIP ID
+  - Jalur SG
+  - Jalur ID
   - Direct Multi-WAN
   url: http://www.gstatic.com/generate_204
   interval: 30
-- name: TrafficSosmed
+- name: Koneksi Sosmed
   type: fallback
   lazy: true
   proxies:
-  - Route VVIP ID
-  - Route VVIP SG
+  - Jalur ID
+  - Jalur SG
   - Direct Multi-WAN
   url: http://www.gstatic.com/generate_204
   interval: 30
@@ -309,85 +310,85 @@ dns:
   - "+.media.dssott.com"
   - shark007.net
 rules:
-- DST-PORT,22,TrafficDirect
+- DST-PORT,22,Koneksi Direct
 - GEOIP,private,DIRECT,no-resolve
 - GEOSITE,rule-malicious,REJECT
-- GEOSITE,oisd-full,TrafficAds
-- GEOSITE,rule-ads,TrafficAds
-- GEOSITE,oisd-nsfw,TrafficPorn
-- GEOSITE,category-porn,TrafficPorn
-- RULE-SET,rule_direct,TrafficDirect
-- GEOSITE,rule-umum,TrafficUmum
+- GEOSITE,oisd-full,Koneksi Ads
+- GEOSITE,rule-ads,Koneksi Ads
+- GEOSITE,oisd-nsfw,Koneksi NSFW
+- GEOSITE,category-porn,Koneksi NSFW
+- RULE-SET,rule_direct,Koneksi Direct
+- GEOSITE,rule-umum,Koneksi Umum
 #Zerotier
-- OR,((GEOSITE,rule-umum),(DST-PORT,9993/29994/40775/43215)),TrafficUmum
-- GEOSITE,rule-indo,TrafficIndo
-- GEOIP,netflix,TrafficIndo
-- GEOSITE,rule-streaming,TrafficStreaming
-- GEOSITE,rule-sosmed,TrafficSosmed
-- GEOIP,facebook,TrafficSosmed
-- GEOIP,twitter,TrafficSosmed
-- GEOIP,telegram,TrafficSosmed
-- GEOSITE,videoconference,TrafficStreaming
+- OR,((GEOSITE,rule-umum),(DST-PORT,9993/29994/40775/43215)),Koneksi Umum
+- GEOSITE,rule-indo,Koneksi Indo
+- GEOIP,netflix,Koneksi Indo
+- GEOSITE,rule-streaming,Koneksi Streaming
+- GEOSITE,rule-sosmed,Koneksi Sosmed
+- GEOIP,facebook,Koneksi Sosmed
+- GEOIP,twitter,Koneksi Sosmed
+- GEOIP,telegram,Koneksi Sosmed
+- GEOSITE,videoconference,Koneksi Streaming
 #VideoConference
-- DST-PORT,3478-3497/8801-8810/16384-16387/1853/8200/5004/9000/5090-5091/5349/10000/19302-19309/5938/5060-5061/500/4500,TrafficStreaming
+- DST-PORT,3478-3497/8801-8810/16384-16387/1853/8200/5004/9000/5090-5091/5349/10000/19302-19309/5938/5060-5061/500/4500,Koneksi Streaming
 #MLBB
-- DST-PORT,5000-5221/5224-5227/5229-5241/5243-5287/5289-5352/5354-5509/5517/5520-5529/5551-5559/5601-5700/8443/9000-9010/9443/10003/30000-30300,TrafficPortGames,tcp
-- DST-PORT,5517-5529/5551-5559/5601-5700/8001/8130/8443/9000-9010/9120/9992/10003/30000-30300,TrafficPortGames,udp
+- DST-PORT,5000-5221/5224-5227/5229-5241/5243-5287/5289-5352/5354-5509/5517/5520-5529/5551-5559/5601-5700/8443/9000-9010/9443/10003/30000-30300,Koneksi PortGames,tcp
+- DST-PORT,5517-5529/5551-5559/5601-5700/8001/8130/8443/9000-9010/9120/9992/10003/30000-30300,Koneksi PortGames,udp
 #FF
-- DST-PORT,6006/6008/6674/7006-7008/7889/8001-8012/9006/9137/10000-10012/11000-11019/12006/12008/13006/15006/20561/39003/39006/39698/39779/39800,TrafficPortGames,tcp
-- DST-PORT,6006/6008/6674/7006-7008/7889/8008/8001-8012/8130/8443/9008/9120/10000-10015/10100/11000-11019/12008/13008,TrafficPortGames,udp
+- DST-PORT,6006/6008/6674/7006-7008/7889/8001-8012/9006/9137/10000-10012/11000-11019/12006/12008/13006/15006/20561/39003/39006/39698/39779/39800,Koneksi PortGames,tcp
+- DST-PORT,6006/6008/6674/7006-7008/7889/8008/8001-8012/8130/8443/9008/9120/10000-10015/10100/11000-11019/12008/13008,Koneksi PortGames,udp
 #PUBG
-- DST-PORT,7889/10012/13004/14000/17000/17500/18081/20000-20002/20371,TrafficPortGames,tcp
-- DST-PORT,8011/9030/10491/10612/12235/13004/13748/17000/17500/20000-20002/7086-7995/10039/10096/11455/12070-12460/13894/13972/41182-41192,TrafficPortGames,udp
+- DST-PORT,7889/10012/13004/14000/17000/17500/18081/20000-20002/20371,Koneksi PortGames,tcp
+- DST-PORT,8011/9030/10491/10612/12235/13004/13748/17000/17500/20000-20002/7086-7995/10039/10096/11455/12070-12460/13894/13972/41182-41192,Koneksi PortGames,udp
 #CODM
-- DST-PORT,3013/10000-10019/18082/50000/65010/65050,TrafficPortGames,tcp
-- DST-PORT,7085-7995/8700/9030/10010-10019/17000-20100,TrafficPortGames,udp
+- DST-PORT,3013/10000-10019/18082/50000/65010/65050,Koneksi PortGames,tcp
+- DST-PORT,7085-7995/8700/9030/10010-10019/17000-20100,Koneksi PortGames,udp
 #AOV
-- DST-PORT,10001-10094,TrafficPortGames,tcp
-- DST-PORT,10101-10201/10080-10110/17000-18000,TrafficPortGames,udp
+- DST-PORT,10001-10094,Koneksi PortGames,tcp
+- DST-PORT,10101-10201/10080-10110/17000-18000,Koneksi PortGames,udp
 #Stumble Guys
-- DST-PORT,5055-5058,TrafficPortGames,udp
+- DST-PORT,5055-5058,Koneksi PortGames,udp
 #Genshin Impact
-- DST-PORT,42472,TrafficPortGames,tcp
-- DST-PORT,42472/22101-22102,TrafficPortGames,udp
+- DST-PORT,42472,Koneksi PortGames,tcp
+- DST-PORT,42472/22101-22102,Koneksi PortGames,udp
 #Clash of Clans (COC) & Clash Royale
-- DST-PORT,9330-9340,TrafficPortGames,tcp
-- DST-PORT,9330-9340,TrafficPortGames,udp
+- DST-PORT,9330-9340,Koneksi PortGames,tcp
+- DST-PORT,9330-9340,Koneksi PortGames,udp
 #League of Legends (LOL) Mobile
-- DST-PORT,2080-2099,TrafficPortGames,tcp
-- DST-PORT,5100,TrafficPortGames,udp
+- DST-PORT,2080-2099,Koneksi PortGames,tcp
+- DST-PORT,5100,Koneksi PortGames,udp
 #DOTA2
-- DST-PORT,9100-9200/8230-8250/8110-8120/27000-28998,TrafficPortGames,tcp
-- DST-PORT,27000-28998/39000,TrafficPortGames,udp
+- DST-PORT,9100-9200/8230-8250/8110-8120/27000-28998,Koneksi PortGames,tcp
+- DST-PORT,27000-28998/39000,Koneksi PortGames,udp
 #FIFA ONLINE
-- DST-PORT,7770-7790,TrafficPortGames,tcp
-- DST-PORT,16300-16350,TrafficPortGames,udp
+- DST-PORT,7770-7790,Koneksi PortGames,tcp
+- DST-PORT,16300-16350,Koneksi PortGames,udp
 #Point Blank Mobile (PB-Mobile)
-- DST-PORT,44590-44610,TrafficPortGames,tcp
-- DST-PORT,40000-40010,TrafficPortGames,udp
+- DST-PORT,44590-44610,Koneksi PortGames,tcp
+- DST-PORT,40000-40010,Koneksi PortGames,udp
 #LINE Let’s Get Rich
-- DST-PORT,10500-10515,TrafficPortGames,tcp
+- DST-PORT,10500-10515,Koneksi PortGames,tcp
 #Dream League Soccer
-- DST-PORT,60970-60980,TrafficPortGames,udp
+- DST-PORT,60970-60980,Koneksi PortGames,udp
 #Among Us
-- DST-PORT,27015-27030/27036-27037,TrafficPortGames,tcp
-- DST-PORT,4380/27000-27031/27036,TrafficPortGames,udp
+- DST-PORT,27015-27030/27036-27037,Koneksi PortGames,tcp
+- DST-PORT,4380/27000-27031/27036,Koneksi PortGames,udp
 #Bleach ES
-- DST-PORT,14422,TrafficPortGames
+- DST-PORT,14422,Koneksi PortGames
 # growrtopia
-- DST-PORT,16999,TrafficPortGames
+- DST-PORT,16999,Koneksi PortGames
 # apex|ff|mlbbb
-- DST-PORT,8013/8888,TrafficPortGames
+- DST-PORT,8013/8888,Koneksi PortGames
 # PB Zeppeto / PB PC
-- DST-PORT,39190-39200/49001-49190,TrafficPortGames,tcp
-- DST-PORT,40000-40010,TrafficPortGames,udp
+- DST-PORT,39190-39200/49001-49190,Koneksi PortGames,tcp
+- DST-PORT,40000-40010,Koneksi PortGames,udp
 # LOST SAGA PC/GN
-- DST-PORT,14009/40005,TrafficPortGames
+- DST-PORT,14009/40005,Koneksi PortGames
 #for ALL ports games
-- NOT,((RULE-SET,rule_umum)),TrafficPortGames
-- GEOSITE,rule-gaming,TrafficGaming
-#Traffic Umum
-- RULE-SET,rule_umum,TrafficUmum
+- NOT,((RULE-SET,rule_umum)),Koneksi PortGames
+- GEOSITE,rule-gaming,Koneksi Gaming
+#Koneksi  Umum
+- RULE-SET,rule_umum,Koneksi Umum
 rule-providers:
   rule_direct:
     type: file
