@@ -23,15 +23,15 @@ proxy-providers:
       interval: 180
 proxy-groups:
 - name: Jalur ID
-  type: load-balance
-  strategy: round-robin
+  type: fallback
+  lazy: false
   use:
   - ID
   url: http://www.gstatic.com/generate_204
   interval: 360
 - name: Jalur SG
-  type: load-balance
-  strategy: round-robin
+  type: fallback
+  lazy: false
   use:
   - SG
   url: http://www.gstatic.com/generate_204
@@ -99,7 +99,7 @@ proxy-groups:
   - Jalur ID
 - name: Koneksi Umum
   type: fallback
-  lazy: true
+  lazy: false
   proxies:
   - Jalur SG
   - Jalur ID
@@ -108,7 +108,7 @@ proxy-groups:
   interval: 30
 - name: Koneksi Indo
   type: fallback
-  lazy: true
+  lazy: false
   proxies:
   - Jalur ID
   - Jalur SG
@@ -117,7 +117,7 @@ proxy-groups:
   interval: 30
 - name: Koneksi Streaming
   type: fallback
-  lazy: true
+  lazy: false
   proxies:
   - Jalur SG
   - Jalur ID
@@ -126,7 +126,7 @@ proxy-groups:
   interval: 30
 - name: Koneksi Sosmed
   type: fallback
-  lazy: true
+  lazy: false
   proxies:
   - Jalur ID
   - Jalur SG
