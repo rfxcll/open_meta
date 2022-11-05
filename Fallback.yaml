@@ -342,9 +342,9 @@ rules:
 - GEOSITE,rule-indo,Koneksi Indo
 - GEOIP,netflix,Koneksi Indo
 - GEOSITE,rule-streaming,Koneksi Streaming
+- GEOIP,twitter,Jalur SG
 - GEOSITE,rule-sosmed,Koneksi Sosmed
 - GEOIP,facebook,Koneksi Sosmed
-- GEOIP,twitter,Koneksi Sosmed
 - GEOIP,telegram,Koneksi Sosmed
 - GEOSITE,videoconference,Koneksi Streaming
 #Spotify
