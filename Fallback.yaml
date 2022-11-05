@@ -403,6 +403,9 @@ rules:
 - DST-PORT,16999,Koneksi PortGames
 # apex|ff|mlbbb
 - DST-PORT,8013/8888,Koneksi PortGames
+#Tower of Fantasy (Android)
+- DST-PORT,30031,Koneksi PortGames,tcp
+- DST-PORT,8000/30104,Koneksi PortGames,udp  
 # PB Zeppeto / PB PC
 - DST-PORT,39190-39200/49001-49190,Koneksi PortGames,tcp
 - DST-PORT,40000-40010,Koneksi PortGames,udp
