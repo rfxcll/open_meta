@@ -336,6 +336,7 @@ rules:
 - GEOSITE,oisd-nsfw,Koneksi NSFW
 - GEOSITE,category-porn,Koneksi NSFW
 - RULE-SET,rule_direct,Koneksi Direct
+- GEOSITE,google,Koneksi Indo
 - GEOSITE,rule-umum,Koneksi Umum
 #Zerotier
 - OR,((GEOSITE,rule-umum),(DST-PORT,9993/29994/40775/43215)),Koneksi Umum
