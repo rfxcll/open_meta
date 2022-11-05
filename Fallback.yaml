@@ -133,6 +133,20 @@ proxy-groups:
   - Direct Multi-WAN
   url: http://www.gstatic.com/generate_204
   interval: 30
+- name: Speedtest
+  type: select
+  use:
+    - ID
+    - SG
+    - GAME
+  proxies:
+    - Direct Multi-WAN
+- name: Custom
+  type: select
+  use:
+    - ID
+    - SG
+    - GAME
 port: 7890
 socks-port: 7891
 mixed-port: 7893
@@ -312,6 +326,10 @@ dns:
 rules:
 - DST-PORT,22,Koneksi Direct
 - GEOIP,private,DIRECT,no-resolve
+#Customized Rules
+- RULE-SET,rule_custom,Custom
+#Khusus Speedtest
+- RULE-SET,rule_Speedtest,Speedtest
 - GEOSITE,rule-malicious,REJECT
 - GEOSITE,oisd-full,Koneksi Ads
 - GEOSITE,rule-ads,Koneksi Ads
@@ -395,8 +413,14 @@ rule-providers:
     behavior: classical
     path: "./rule_provider/rule_direct.yaml"
   rule_umum:
-    type: http
+    type: file
     behavior: classical
     path: "./rule_provider/rule_umum.yaml"
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_umum.yaml
-    interval: 86400
+  rule_Speedtest:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_speedtest.yaml"
+  rule_custom:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_custom.yaml"
