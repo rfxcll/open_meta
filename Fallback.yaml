@@ -342,7 +342,7 @@ rules:
 - GEOSITE,rule-indo,Koneksi Indo
 - GEOIP,netflix,Koneksi Indo
 - GEOSITE,rule-streaming,Koneksi Streaming
-- GEOIP,twitter,Jalur SG
+- GEOIP,twitter,Koneksi Umum
 - GEOSITE,rule-sosmed,Koneksi Sosmed
 - GEOIP,facebook,Koneksi Sosmed
 - GEOIP,telegram,Koneksi Sosmed
