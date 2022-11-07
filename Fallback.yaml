@@ -83,7 +83,7 @@ proxy-groups:
   - Direct WAN B
   - Direct WAN C
   use:
-  - Akun-GAME
+  - GAME
 - name: Koneksi Ads
   type: select
   proxies:
