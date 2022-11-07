@@ -11,7 +11,8 @@ payload:
   - DST-PORT,45395
   - DST-PORT,50318
   - DST-PORT,59234
-# > NextDNS (DoH, DoT and Linked IP)
+# > NextDNS (DoH, DoT, basic DNS TCP/UDP and Linked IP)
   - DOMAIN-SUFFIX,dns.nextdns.io
   - DOMAIN-KEYWORD,link-ip
   - DST-PORT,853
+  - DST-PORT,53
