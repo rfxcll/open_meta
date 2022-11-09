@@ -206,13 +206,11 @@ dns:
   nameserver:
   - 1.1.1.1
   - 8.8.8.8
-  - udp://1.1.1.1
-  - udp://8.8.8.8
+  - 9.9.9.9
   fallback:
   - 1.1.1.1
   - 8.8.8.8
-  - udp://1.1.1.1
-  - udp://8.8.8.8
+  - 9.9.9.9
   fallback-filter:
     geoip: true
     geoip-code: ID
