@@ -14,4 +14,5 @@ payload:
 # > NextDNS (DoH, DoT and Linked IP)
   - DOMAIN-SUFFIX,dns.nextdns.io
   - DOMAIN-KEYWORD,link-ip
+  - DOMAIN-KEYWORD,doh
   - DST-PORT,853
