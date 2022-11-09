@@ -408,11 +408,13 @@ rules:
 #Tower of Fantasy (Android)
 - DST-PORT,30031,Koneksi PortGames,tcp
 - DST-PORT,8000/30104,Koneksi PortGames,udp  
-# PB Zeppeto / PB PC
+#PB Zeppeto / PB PC
 - DST-PORT,39190-39200/49001-49190,Koneksi PortGames,tcp
 - DST-PORT,40000-40010,Koneksi PortGames,udp
-# LOST SAGA PC/GN
+#LOST SAGA PC/GN
 - DST-PORT,14009/40005,Koneksi PortGames
+#Supercell Games
+- DST-PORT,9339,Koneksi PortGames,tcp
 #for ALL ports games
 - AND,((NOT,((RULE-SET,rule_umum))),(NETWORK,TCP)),Koneksi PortGames
 - AND,((NOT,((RULE-SET,rule_umum))),(NETWORK,UDP)),Koneksi PortGames
