@@ -325,7 +325,7 @@ dns:
   - "+.media.dssott.com"
   - shark007.net
 rules:
-- DST-PORT,22,Koneksi Direct
+- DST-PORT,21-22,Koneksi Direct
 - GEOIP,private,DIRECT,no-resolve
 #Customized Rules
 - RULE-SET,rule_custom,Custom
