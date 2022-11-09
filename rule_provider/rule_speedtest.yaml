@@ -21,10 +21,10 @@ payload:
   - DOMAIN-SUFFIX,loadingtest.com
   - DOMAIN-SUFFIX,testmy.net
   - DOMAIN-SUFFIX,proof.ovh.net
+  - DOMAIN-SUFFIX,bandwidthplace.com
   - DOMAIN-KEYWORD,speedtest
   - DOMAIN-KEYWORD,speedtestcustom
   - DOMAIN-KEYWORD,openspeedtest
   - DOMAIN-KEYWORD,speedchecker
   - DOMAIN-KEYWORD,iperf
   - DST-PORT,8080
-  - DST-PORT,8088
