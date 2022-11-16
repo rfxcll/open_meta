@@ -328,16 +328,16 @@ dns:
 rules:
 - DST-PORT,21-22,Koneksi Direct
 - GEOIP,private,DIRECT,no-resolve
+- RULE-SET,rule_direct,Koneksi Direct
 #Customized Rules
 - RULE-SET,rule_custom,Custom
-#Khusus Speedtest
+#Speedtest
 - RULE-SET,rule_Speedtest,Speedtest
 - GEOSITE,rule-malicious,REJECT
 - GEOSITE,oisd-full,Koneksi Ads
 - GEOSITE,rule-ads,Koneksi Ads
 - GEOSITE,oisd-nsfw,Koneksi NSFW
 - GEOSITE,category-porn,Koneksi NSFW
-- RULE-SET,rule_direct,Koneksi Direct
 - GEOSITE,google,Koneksi Indo
 - GEOSITE,rule-umum,Koneksi Umum
 #Zerotier
