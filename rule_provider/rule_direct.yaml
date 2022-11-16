@@ -11,9 +11,22 @@ payload:
   - DST-PORT,45395
   - DST-PORT,50318
   - DST-PORT,59234
-# > NextDNS (DoH and Linked IP)
+# > NextDNS (DoH)
   - DOMAIN-SUFFIX,dns.nextdns.io
-  - DOMAIN-KEYWORD,link-ip
-# > DoH / DoT
-  - DOMAIN-KEYWORD,doh
+# > DoT
   - DST-PORT,853
+# > DoH Cloudflare, Google and Quad
+  - DOMAIN-KEYWORD,doh.
+  - DOMAIN-SUFFIX,cloudflare-dns.com
+  - DOMAIN,dns.cloudflare.com
+  - DOMAIN,8888.google
+  - DOMAIN,dns.google
+  - DOMAIN,dns64.dns.google
+  - DOMAIN,google-public-dns-a.google.com
+  - DOMAIN,google-public-dns-b.google.com
+  - DOMAIN,dns.quad9.net
+  - DOMAIN,dns9.quad9.net
+  - DOMAIN,dns10.quad9.net
+  - DOMAIN,dns11.quad9.net
+  - DOMAIN,dns12.quad9.net
+  - DOMAIN,dns13.quad9.net
