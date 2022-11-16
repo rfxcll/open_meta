@@ -6,6 +6,8 @@
 - [Global Setting](#global-setting)
   - [Operation Mode](#operation-mode)
   - [DNS Setting](#dns-setting)
+  - [Kernel Meta](#kernel-meta)
+	- [Official](#official)
   - [Meta Setting](#meta-setting)
     - [GEOIP](#geoip)
     - [GEOSITE](#geosite)
@@ -34,7 +36,7 @@ OpenClash Config untuk VVIP IPTUNNELS
 - Support GEOSITE INDO
 - Support GEOSITE STREAMING
 - Support GEOSITE SOSMED
-- Support Direct/Bypass traffik.
+- Support Direct/Bypass.
 
 # Setting Openclash App
 
@@ -49,29 +51,30 @@ Hasil settingan pada global setting akan meng-overide settingal awal pada file i
 - Operation Mode **SWITCH PAGE TO FAKE IP MODE** terlebih dahulu.
 - Ceklist/centang opsi sesuai gambar berikut:
 
-<img src="https://raw.githubusercontent.com/malikshi/open_meta/main/images/operationmode.jpg" border="0">
+[![Gambar Operation Mode](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/operationmode.jpg "Operation Mode")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/operationmode.jpg)
 
 ## DNS Setting
 
 - Ceklist/Centang sesuai gambar:
 
-<img src="https://raw.githubusercontent.com/malikshi/open_meta/main/images/dnssetting-1.jpg" border="0">
+[![Gambar Setting DNS](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/dnssetting-1.jpg "Setting DNS")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/dnssetting-1.jpg)
 
-- Tambahkan Server Group name server dan fallback masing masing 2 seperti pada gambar berikut.
+## Kernel Meta
 
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/dns-fallback.jpg" border="0">
+### Official
 
-DNS Server Group | DNS Server Address | DNS Server Port | DNS Server Type
------------- | ------------- | ------------- | -------------
-NameServer | dns.quad9.net/dns-query |   | HTTPS
-NameServer | 9.9.9.9 | 853 | TLS
-FallBack | dns.quad9.net/dns-query |   | HTTPS
-FallBack | 149.112.112.112 | 853 | TLS
+- Download kernel [Meta Official](https://github.com/MetaCubeX/Clash.Meta/releases/latest)
+- Pilih file bernama **Clash.Meta-linux-arm64-v1.xx.x.gz**
+- Upload file tersebut sebagai **Upload File Type : [Meta] Core File**
+
+[![Gambar Meta Core](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metacore.jpg "Meta Core")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metacore.jpg)
+
 
 ## Meta Setting
 
 Disini akan menggunakan Meta kernel jadi harus mengatur meta setting.
-<img src="https://raw.githubusercontent.com/malikshi/open_meta/main/images/metasetting-1.jpg" border="0">
+
+[![Gambar Setting Meta](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-1.jpg "Setting Meta")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-1.jpg)
 
 ```
 force-domain:
@@ -82,7 +85,7 @@ force-domain:
 - '+.media.dssot.com'
 ```
 
-<img src="https://raw.githubusercontent.com/malikshi/open_meta/main/images/metasetting-2.jpg" border="0">
+[![Gambar Setting Meta](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-2.jpg "Setting Meta")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-2.jpg)
 
 ```
 port-whitelist:
@@ -97,10 +100,12 @@ skip-sni:
   - 'Mijia Cloud'
   - '+.jd.com'
 ```
+
 ### GEOIP
 
 Wajib menggunakan GeoIP.dat silahkan setting sesuai gambar
-<img src="https://raw.githubusercontent.com/malikshi/open_meta/main/images/metasetting-3.jpg" border="0">
+
+[![Gambar Setting GeoIP](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-3.jpg "Setting GeoIP")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-3.jpg)
 
 Jika belum ada GeoIP pada folder `/etc/openclash/` maka silahkan download terlebih dahulu.
 
@@ -119,7 +124,7 @@ https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/release/geosite.dat
 
 Perhatikan gambar berikut.
 
-<img src="https://raw.githubusercontent.com/malikshi/open_meta/main/images/metasetting-4.jpg" border="0">
+[![Gambar Setting GeoSite](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-4.jpg "Setting GeoSite")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-4.jpg)
 
 WAJIB menggunakan GeoSite custom kami. Silahkan download terlebih dahulu.
 
