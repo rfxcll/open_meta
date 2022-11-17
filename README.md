@@ -12,7 +12,7 @@
     - [GEOIP](#geoip)
     - [GEOSITE](#geosite)
 - [Setting Config](#setting-config)
-  - [Import iptunnels.yaml](#import-iptunnelsyaml)
+  - [Import Fallback.yaml](#import-fallbackyaml)
   - [Import Proxy Provider](#import-proxy-provider)
   - [Import Rule Provider](#import-rule-provider)
 - [Test Adblock 100%](#test-adblock-100)
@@ -23,7 +23,7 @@ OpenClash Config untuk VVIP IPTUNNELS
 
 - [Buy VVIP IPTUNNELS](https://linktr.ee/iptunnelscom)
 - [Join Telegram](https://t.me/+O08-QK6VNXU5NzU1)
-- [Requests Rules](https://github.com/malikshi/open_clash/issues/new/choose)
+- [Requests Rules](https://github.com/rfxcll/open_clash/issues/new/choose)
 
 # Features
 
@@ -40,11 +40,11 @@ OpenClash Config untuk VVIP IPTUNNELS
 
 # Setting Openclash App
 
-Setelah mengedit config iptunnels.yaml dan setiap file pada folder proxy_provider serta rule_direct.yaml pada folder rule_provider maka kita akan setting openclash via luCI. Silahkan Login LuCI dan masuk ke Services > Openclash
+Setelah mengedit config Fallback.yaml dan setiap file pada folder proxy_provider serta rule_direct.yaml pada folder rule_provider maka kita akan setting openclash via luCI. Silahkan Login LuCI dan masuk ke Services > Openclash
 
 # Global Setting
 
-Hasil settingan pada global setting akan meng-overide settingal awal pada file iptunnels.yaml.
+Hasil settingan pada global setting akan meng-overide settingal awal pada file Fallback.yaml.
 
 ## Operation Mode
 
@@ -137,27 +137,29 @@ chmod 744 /etc/openclash/GeoSite.dat
 
 Untuk pengaturan config dan proxy_provider silahkan cek repo kami
 
-- [Cara mengisi akun](https://github.com/malikshi/open_clash#cara-mengisi-akun)
-- [Edit Proxy Provider](https://github.com/malikshi/open_clash#edit-files-proxy-provider)
+- [Cara mengisi akun](https://github.com/rfxcll/open_clash#cara-mengisi-akun)
+- [Edit Proxy Provider](https://github.com/rfxcll/open_clash#edit-files-proxy-provider)
 
-## Import iptunnels.yaml
+## Import Fallback.yaml
 
-Setelah melakukan pengeditan iptunnels.yaml maka kita import iptunnels.yaml via Manage Config. Dan khusus iptunnels.yaml jangan import/edit melalui winscp/sftp.
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/main-upload.jpg" border="0">
+Setelah melakukan pengeditan Fallback.yaml maka kita import Fallback.yaml via Manage Config dengan memilih **Upload File Type : Config File**. Khusus Fallback.yaml jangan import/edit melalui winscp/sftp.
+[![Gambar Upload Config](https://raw.githubusercontent.com/rfxcll/open_clash/main/assets/config-upload.jpg "Upload Config")](https://raw.githubusercontent.com/rfxcll/open_clash/main/assets/config-upload.jpg)
 
 ## Import Proxy Provider
 
-Jika Semua file pada folder proxy_provider yang terdiri dari vvip-id.yaml, vvip-sg.yaml, vvip-game.yaml yang sudah diisi dengan akun maka selanjutnya import file-file tersebut pada **Upload File Type : Proxy Provider File**.
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/proxy-upload.jpg" border="0">
+Jika Semua file pada folder proxy_provider yang terdiri dari Akun-ID.yaml, Akun-SG.yaml, Akun-GAME.yaml yang sudah diisi dengan akun maka selanjutnya import file-file tersebut pada **Upload File Type : Proxy Provider File**.
+[![Gambar Upload Proxy](https://raw.githubusercontent.com/rfxcll/open_clash/main/assets/proxy-upload.jpg "Upload Proxy")](https://raw.githubusercontent.com/rfxcll/open_clash/main/assets/proxy-upload.jpg)
 
 ## Import Rule Provider
 
-traffic direct/bypass sudah disikan ke rule_direct.yaml maka bisa langsung import semua files pada folder rule_provider pada **Upload File Type : Rule Provider File**.
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/rule-upload.jpg" border="0">
+Traffic direct/bypass sudah disikan ke rule_direct.yaml maka bisa langsung import semua files pada folder rule_provider pada **Upload File Type : Rule Provider File**.
+[![Gambar Upload Rule](https://raw.githubusercontent.com/rfxcll/open_clash/main/assets/rule-upload.jpg "Upload Rule")](https://raw.githubusercontent.com/rfxcll/open_clash/main/assets/rule-upload.jpg)
 
-# Test Adblock 100%
+# Test Adblock 99%
 
 Silahkan test rules adblock melalui [https://d3ward.github.io/toolz/adblock.html](https://d3ward.github.io/toolz/adblock.html)
 
+Bypass pada **pagead2(dot)googlesyndication(dot)com** akan mengurangi nilai test.
+
 Hasil test:
-<img src="https://raw.githubusercontent.com/malikshi/open_clash/main/assets/d3ward.jpg" border="0">
+[![Gambar Hasil Test d3ward](https://raw.githubusercontent.com/rfxcll/open_clash/main/assets/d3ward.jpg "Hasil Test d3ward")](https://raw.githubusercontent.com/rfxcll/open_clash/main/assets/d3ward.jpg)
