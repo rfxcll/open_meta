@@ -15,7 +15,7 @@
   - [Import Fallback.yaml](#import-fallbackyaml)
   - [Import Proxy Provider](#import-proxy-provider)
   - [Import Rule Provider](#import-rule-provider)
-- [Test Adblock 100%](#test-adblock-100)
+- [Test Adblock 99%](#test-adblock-99)
 
 # OpenClash Meta Kernel
 
