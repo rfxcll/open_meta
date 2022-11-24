@@ -318,15 +318,17 @@ rules:
 - DST-PORT,21-22,Koneksi Direct
 - GEOIP,private,DIRECT,no-resolve
 - RULE-SET,rule_direct,Koneksi Direct
+- GEOSITE,rule-doh,Koneksi Direct
 #Customized Rules
 - RULE-SET,rule_custom,Custom
-#Speedtest
-- RULE-SET,rule_Speedtest,Speedtest
 - GEOSITE,rule-malicious,REJECT
 - GEOSITE,oisd-full,Koneksi Ads
 - GEOSITE,rule-ads,Koneksi Ads
 - GEOSITE,oisd-nsfw,Koneksi NSFW
 - GEOSITE,category-porn,Koneksi NSFW
+#Speedtest
+- GEOSITE,rule-speedtest,Speedtest
+- DST-PORT,8080,Speedtest
 - GEOSITE,google,Koneksi Indo
 - GEOSITE,rule-umum,Koneksi Umum
 #Zerotier
