@@ -61,7 +61,7 @@ proxy-groups:
   - DIRECT
 - name: Direct WAN B
   type: select
-  interface-name: eth0
+  interface-name: usb0
   proxies:
   - DIRECT
 - name: Direct WAN C
@@ -72,8 +72,11 @@ proxy-groups:
 - name: Koneksi PortGames
   type: select
   proxies:
-  - Koneksi Direct
   - Jalur GAME
+  - Koneksi Direct
+  - Direct WAN A
+  - Direct WAN B
+  - Direct WAN C
 - name: Koneksi Gaming
   type: select
   proxies:
@@ -82,8 +85,6 @@ proxy-groups:
   - Direct WAN A
   - Direct WAN B
   - Direct WAN C
-  use:
-  - GAME
 - name: Koneksi Ads
   type: select
   proxies:
