@@ -422,15 +422,11 @@ rule-providers:
     type: file
     behavior: classical
     path: "./rule_provider/rule_direct.yaml"
-  rule_umum:
-    type: file
-    behavior: classical
-    path: "./rule_provider/rule_umum.yaml"
-  rule_Speedtest:
-    type: file
-    behavior: classical
-    path: "./rule_provider/rule_speedtest.yaml"
   rule_custom:
     type: file
     behavior: classical
     path: "./rule_provider/rule_custom.yaml"
+  rule_umum:
+    type: file
+    behavior: classical
+    path: "./rule_provider/rule_umum.yaml"
