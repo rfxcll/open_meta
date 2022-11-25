@@ -110,7 +110,7 @@ Wajib menggunakan GeoIP.dat silahkan setting sesuai gambar
 Jika belum ada GeoIP pada folder `/etc/openclash/` maka silahkan download terlebih dahulu.
 
 ```sh
-wget -O /etc/openclash/GeoIP.dat https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/release/geoip.dat
+curl -o /etc/openclash/GeoIP.dat https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/release/GeoIP.dat
 chmod 744 /etc/openclash/GeoIP.dat
 ```
 
@@ -119,7 +119,7 @@ chmod 744 /etc/openclash/GeoIP.dat
 Karena semua rule kami pindahkan ke GeoSite.dat maka perlu setting `custom geosite url` menggunakan hasil compile custom list yang telah kami sediakan.
 
 ```sh
-https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/release/geosite.dat
+https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/release/GeoSite.dat
 ```
 
 Perhatikan gambar berikut.
@@ -129,7 +129,7 @@ Perhatikan gambar berikut.
 WAJIB menggunakan GeoSite custom kami. Silahkan download terlebih dahulu.
 
 ```sh
-wget -O /etc/openclash/GeoSite.dat https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/release/geosite.dat
+curl -o /etc/openclash/GeoSite.dat https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/release/GeoSite.dat
 chmod 744 /etc/openclash/GeoSite.dat
 ```
 
