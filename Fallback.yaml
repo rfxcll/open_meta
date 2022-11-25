@@ -407,6 +407,9 @@ rules:
 - DST-PORT,14009/40005,Koneksi PortGames
 #Supercell Games
 - DST-PORT,9339,Koneksi PortGames,tcp
+#Valorant
+- DST-PORT,2099/8088/8393-8400,Koneksi PortGames,tcp
+- DST-PORT,7000-8000/8180-8181/8088/27016-27024/54000-54012,Koneksi PortGames,udp
 #for ALL ports games
 - AND,((NOT,((RULE-SET,rule_umum))),(NETWORK,TCP)),Koneksi PortGames
 - AND,((NOT,((RULE-SET,rule_umum))),(NETWORK,UDP)),Koneksi PortGames
