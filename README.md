@@ -116,7 +116,7 @@ chmod 744 /etc/openclash/GeoIP.dat
 
 ### GEOSITE
 
-Karena semua rule kami pindahkan ke GeoSite.dat maka perlu setting `custom geosite url` menggunakan hasil compile custom list yang telah kami sediakan.
+Karena semua rule kami pindahkan ke GeoSite.dat maka perlu setting `Custom GeoSite URL` menggunakan hasil compile custom list yang telah kami sediakan.
 
 ```sh
 https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/release/GeoSite.dat
