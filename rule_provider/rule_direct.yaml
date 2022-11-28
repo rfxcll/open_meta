@@ -11,8 +11,6 @@ payload:
   - DST-PORT,45395
   - DST-PORT,50318
   - DST-PORT,59234
-# > NextDNS (DoH)
-  - DOMAIN-SUFFIX,dns.nextdns.io
 # > DoT
   - DST-PORT,853
 # > DoH Keyword
@@ -33,6 +31,12 @@ payload:
   - DOMAIN,dns64.dns.google
   - DOMAIN,google-public-dns-a.google.com
   - DOMAIN,google-public-dns-b.google.com
+# > DoH NextDNS
+  - DOMAIN,chromium.dns.nextdns.io
+  - DOMAIN-SUFFIX,dns.nextdns.io
+  - DOMAIN,dns1.nextdns.io
+  - DOMAIN,dns2.nextdns.io
+  - DOMAIN,firefox.dns.nextdns.io
 # > DoH Quad  
   - DOMAIN,dns.quad9.net
   - DOMAIN,dns9.quad9.net
@@ -40,4 +44,3 @@ payload:
   - DOMAIN,dns11.quad9.net
   - DOMAIN,dns12.quad9.net
   - DOMAIN,dns13.quad9.net
-  
