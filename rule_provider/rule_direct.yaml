@@ -25,6 +25,7 @@ payload:
 # > DoH Cloudflare
   - DOMAIN-SUFFIX,cloudflare-dns.com
   - DOMAIN,dns.cloudflare.com
+  - DOMAIN,1dot1dot1dot1.cloudflare-dns.com
 # > DoH Google  
   - DOMAIN,8888.google
   - DOMAIN,dns.google
