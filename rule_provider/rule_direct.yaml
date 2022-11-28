@@ -29,11 +29,13 @@ payload:
   - DOMAIN,8888.google
   - DOMAIN,dns.google
   - DOMAIN,dns64.dns.google
+  - DOMAIN,dns.google.com
   - DOMAIN,google-public-dns-a.google.com
   - DOMAIN,google-public-dns-b.google.com
 # > DoH NextDNS
-  - DOMAIN,chromium.dns.nextdns.io
   - DOMAIN-SUFFIX,dns.nextdns.io
+  - DOMAIN,anycast.dns.nextdns.io
+  - DOMAIN,chromium.dns.nextdns.io
   - DOMAIN,dns1.nextdns.io
   - DOMAIN,dns2.nextdns.io
   - DOMAIN,firefox.dns.nextdns.io
@@ -44,3 +46,4 @@ payload:
   - DOMAIN,dns11.quad9.net
   - DOMAIN,dns12.quad9.net
   - DOMAIN,dns13.quad9.net
+  - DOMAIN,dns-nosec.quad9.net
