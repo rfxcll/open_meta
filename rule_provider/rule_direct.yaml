@@ -15,18 +15,29 @@ payload:
   - DOMAIN-SUFFIX,dns.nextdns.io
 # > DoT
   - DST-PORT,853
-# > DoH Cloudflare, Google and Quad
+# > DoH Keyword
   - DOMAIN-KEYWORD,doh.
+# > DoH AdGuard
+  - DOMAIN,dns.adguard-dns.com
+  - DOMAIN,family.adguard-dns.com
+  - DOMAIN,unfiltered.adguard-dns.com
+  - DOMAIN,dns.adguard.com
+  - DOMAIN,dns-family.adguard.com
+  - DOMAIN,dns-unfiltered.adguard.com
+# > DoH Cloudflare
   - DOMAIN-SUFFIX,cloudflare-dns.com
   - DOMAIN,dns.cloudflare.com
+# > DoH Google  
   - DOMAIN,8888.google
   - DOMAIN,dns.google
   - DOMAIN,dns64.dns.google
   - DOMAIN,google-public-dns-a.google.com
   - DOMAIN,google-public-dns-b.google.com
+# > DoH Quad  
   - DOMAIN,dns.quad9.net
   - DOMAIN,dns9.quad9.net
   - DOMAIN,dns10.quad9.net
   - DOMAIN,dns11.quad9.net
   - DOMAIN,dns12.quad9.net
   - DOMAIN,dns13.quad9.net
+  
