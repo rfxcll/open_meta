@@ -147,6 +147,8 @@ proxy-groups:
     - ID
     - SG
     - GAME
+  proxies:
+    - PASS
 port: 7890
 socks-port: 7891
 mixed-port: 7893
@@ -156,19 +158,21 @@ geodata-mode: true
 geodata-loader: memconservative
 tcp-concurrent: true
 allow-lan: true
-bind-address: '*'
+bind-address: "*"
 mode: rule
 log-level: silent
 ipv6: false
 unified-delay: false
 external-controller: 0.0.0.0:9090
 external-ui: "/usr/share/openclash/ui"
-secret: '123456'
+secret: "123456"
 profile:
   store-selected: true
   store-fake-ip: false
 sniffer:
   enable: true
+  ForceDnsMapping: false
+  ParsePureIp: true
   sniffing:
   - tls
   - http
@@ -184,24 +188,30 @@ sniffer:
   port-whitelist:
   - 443
   - 80
+  - 853
 dns:
   enable: true
   listen: 0.0.0.0:7874
+  ipv6: false
+  prefer-h3: true
   default-nameserver:
   - 1.1.1.1
   - 1.0.0.1
   - 8.8.8.8
   - 8.8.4.4
+  - 192.168.8.1
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   nameserver:
   - 1.1.1.1
   - 8.8.8.8
   - 9.9.9.9
+  - 192.168.8.1
   fallback:
   - 1.1.1.1
   - 8.8.8.8
   - 9.9.9.9
+  - 192.168.8.1
   fallback-filter:
     geoip: true
     geoip-code: ID
@@ -213,7 +223,6 @@ dns:
     - "+.google.com"
     - "+.facebook.com"
     - "+.youtube.com"
-  ipv6: false
   fake-ip-filter:
   - "*.lan"
   - "*.localdomain"
@@ -316,6 +325,7 @@ dns:
   - "+.media.dssott.com"
   - shark007.net
 rules:
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
 - DST-PORT,21-22,Koneksi Direct
 - GEOIP,private,DIRECT,no-resolve
 - RULE-SET,rule_direct,Koneksi Direct
@@ -330,7 +340,6 @@ rules:
 #Speedtest
 - GEOSITE,rule-speedtest,Speedtest
 - DST-PORT,8080,Speedtest
-- GEOSITE,google,Koneksi Indo
 - GEOSITE,rule-umum,Koneksi Umum
 #Zerotier
 - OR,((GEOSITE,rule-umum),(DST-PORT,9993/29994/40775/43215)),Koneksi Umum
@@ -346,7 +355,7 @@ rules:
 - DST-PORT,4070,Koneksi Indo,tcp
 - DST-PORT,4070,Koneksi Indo,udp
 #Remote Desktop Connection (TeamViewer,Anydesk)
-- AND,((DST-PORT,6568/7070),(DOMAIN-SUFFIX,net.anydesk.com)),Koneksi Streaming
+- OR,((DST-PORT,6568/7070),(DOMAIN-SUFFIX,net.anydesk.com)),Koneksi Streaming
 - AND,((DST-PORT,5938),(DOMAIN-SUFFIX,teamviewer.com)),Koneksi Streaming
 #VideoConference
 - DST-PORT,3478-3497/8801-8810/16384-16387/1853/8200/5004/9000/5090-5091/5349/10000/19302-19309/5938/5060-5061/500/4500,Koneksi Streaming
