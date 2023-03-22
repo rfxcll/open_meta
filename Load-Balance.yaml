@@ -422,6 +422,9 @@ rules:
 #Valorant
 - DST-PORT,2099/8088/8393-8400,Koneksi PortGames,tcp
 - DST-PORT,7000-8000/8180-8181/8088/27016-27024/54000-54012,Koneksi PortGames,udp
+#Honor of Kings
+- DST-PORT,5692/8085/8500/10000/10082/20000/25000/29134/31003,Koneksi PortGames,tcp
+- DST-PORT,5010/6650/8011/8700/20000/25000/29134/30000,Koneksi PortGames,udp
 #for ALL ports games
 - AND,((NOT,((RULE-SET,rule_umum))),(NETWORK,TCP)),Koneksi PortGames
 - AND,((NOT,((RULE-SET,rule_umum))),(NETWORK,UDP)),Koneksi PortGames
