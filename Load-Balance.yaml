@@ -165,6 +165,7 @@ mode: rule
 log-level: silent
 ipv6: false
 unified-delay: false
+global-client-fingerprint: none
 external-controller: 0.0.0.0:9090
 external-ui: "/usr/share/openclash/ui"
 secret: "123456"
@@ -173,11 +174,15 @@ profile:
   store-fake-ip: false
 sniffer:
   enable: true
-  ForceDnsMapping: false
-  ParsePureIp: true
-  sniffing:
-  - tls
-  - http
+  force-dns-mapping: false
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    TLS:
+      ports: [443, 853, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
   force-domain:
   - "+.netflix.com"
   - "+.nflxvideo.net"
@@ -187,15 +192,12 @@ sniffer:
   - "+.apple.com"
   - Mijia Cloud
   - "+.jd.com"
-  port-whitelist:
-  - 443
-  - 80
-  - 853
+  - dlg.io.mi.com
 dns:
   enable: true
   listen: 0.0.0.0:7874
   ipv6: false
-  prefer-h3: true
+  prefer-h3: false
   default-nameserver:
   - 1.1.1.1
   - 1.0.0.1
