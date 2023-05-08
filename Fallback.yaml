@@ -316,8 +316,6 @@ dns:
   - "+.media.dssott.com"
   - shark007.net
 rules:
-- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-- DST-PORT,21-22,Koneksi Direct
 - GEOIP,private,DIRECT,no-resolve
 - RULE-SET,rule_direct,Koneksi Direct
 - GEOSITE,rule-doh,Koneksi Direct
