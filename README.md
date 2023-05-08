@@ -58,6 +58,8 @@ Hasil settingan pada global setting akan meng-overide settingal awal pada file F
 - Ceklist/Centang sesuai gambar:
 
 [![Gambar Setting DNS](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/dnssetting-1.jpg "Setting DNS")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/dnssetting-1.jpg)
+[![Gambar Setting DNS](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/dnssetting-2.jpg "Setting DNS")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/dnssetting-2.jpg)
+
 
 ## Kernel Meta
 
@@ -76,6 +78,8 @@ Disini akan menggunakan Meta kernel jadi harus mengatur meta setting.
 
 [![Gambar Setting Meta](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-1.jpg "Setting Meta")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-1.jpg)
 
+[![Gambar Setting Meta](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-2.jpg "Setting Meta")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-2.jpg)
+
 ```
 force-domain:
 #  - '+'
@@ -85,14 +89,20 @@ force-domain:
 - '+.media.dssot.com'
 ```
 
-[![Gambar Setting Meta](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-2.jpg "Setting Meta")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-2.jpg)
+```
+sniff:
+  # TLS default 443
+  TLS:
+    ports: [443, 182-183, 853, 8443]
 
+  # default 80
+  HTTP:
+    # Ports to sniff
+    ports: [80, 8080-9090]
+     # Whether to use sniffing results as actual access
+    override-destination: true
 ```
-port-whitelist:
-  - 443
-  - 80
-#  - 8080-9090
-```
+[![Gambar Setting Meta](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-5.jpg "Setting Meta")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-5.jpg)
 
 ```
 skip-sni:
@@ -104,6 +114,10 @@ skip-sni:
 ### GEOIP
 
 Wajib menggunakan GeoIP.dat silahkan setting sesuai gambar
+
+```sh
+https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/release/GeoIP.dat
+```
 
 [![Gambar Setting GeoIP](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-3.jpg "Setting GeoIP")](https://raw.githubusercontent.com/rfxcll/open_meta/main/images/metasetting-3.jpg)
 
