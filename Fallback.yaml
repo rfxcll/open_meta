@@ -214,6 +214,9 @@ dns:
     "geosite:rule-indo":
     - 1.0.0.1
     - 8.8.4.4
+  proxy-server-nameserver:
+  - 1.0.0.1
+  - 8.8.4.4
   fake-ip-filter:
   - "*.lan"
   - "*.localdomain"
