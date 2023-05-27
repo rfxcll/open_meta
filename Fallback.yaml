@@ -368,9 +368,15 @@ rules:
 - DST-PORT,5008/8011/8700/10000/14050/14080/17000,Koneksi PortGames,udp
 #Stumble Guys
 - DST-PORT,5055-5058,Koneksi PortGames,udp
+#Honkai Impact 3rd
+- DST-PORT,16100/27015/27036,Koneksi PortGames,tcp
+- DST-PORT,27015/27031-27036,Koneksi PortGames,udp
 #Genshin Impact
 - DST-PORT,42472,Koneksi PortGames,tcp
 - DST-PORT,42472/22101-22102,Koneksi PortGames,udp
+#Honkai Star Rail
+- DST-PORT,23301,Koneksi PortGames,tcp
+- DST-PORT,23301,Koneksi PortGames,udp
 #Clash of Clans (COC) & Clash Royale
 - DST-PORT,9330-9340,Koneksi PortGames,tcp
 - DST-PORT,9330-9340,Koneksi PortGames,udp
