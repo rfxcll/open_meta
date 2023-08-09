@@ -173,7 +173,6 @@ profile:
   store-fake-ip: false
 sniffer:
   enable: true
-  force-dns-mapping: false
   parse-pure-ip: true
   override-destination: false
   sniff:
@@ -211,9 +210,7 @@ dns:
   - 9.9.9.9
   - 192.168.8.1
   nameserver-policy:
-    "geosite:rule-indo":
-    - 1.0.0.1
-    - 8.8.4.4
+  geosite:oisd-full,rule-ads: rcode://success
   proxy-server-nameserver:
   - 1.0.0.1
   - 8.8.4.4
