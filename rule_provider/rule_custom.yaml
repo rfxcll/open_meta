@@ -1,5 +1,5 @@
 payload:
 # Bypass AdBlock
-  - DOMAIN,pagead2.googlesyndication.com
-  - DOMAIN,googleadservices.com
   - DOMAIN,adservice.google.com
+  - DOMAIN,pagead2.googlesyndication.com
+  - DOMAIN-SUFFIX,googleadservices.com
