@@ -346,9 +346,11 @@ rules:
 #Spotify
 - DST-PORT,4070,Koneksi Indo,tcp
 - DST-PORT,4070,Koneksi Indo,udp
-#Remote Desktop Connection (TeamViewer,Anydesk)
+#Remote Desktop Connection (TeamViewer,Anydesk,Rustdesk)
 - OR,((DST-PORT,6568/7070),(DOMAIN-SUFFIX,net.anydesk.com)),Koneksi Streaming
 - AND,((DST-PORT,5938),(DOMAIN-SUFFIX,teamviewer.com)),Koneksi Streaming
+- AND,((DST-PORT,21115-21119),(NETWORK,TCP)),Koneksi Streaming
+- AND,((DST-PORT,21116),(NETWORK,UDP)),Koneksi Streaming
 #VideoConference
 - DST-PORT,3478-3497/8801-8810/16384-16387/1853/8200/5004/9000/5090-5091/5349/10000/19302-19309/5938/5060-5061/500/4500,Koneksi Streaming
 #MLBB
