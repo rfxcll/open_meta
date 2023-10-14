@@ -199,6 +199,7 @@ dns:
   listen: 0.0.0.0:7874
   ipv6: false
   prefer-h3: false
+  use-hosts: true
   default-nameserver:
   - 1.1.1.1
   - 1.0.0.1
