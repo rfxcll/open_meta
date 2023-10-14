@@ -151,8 +151,8 @@ proxy-groups:
     - PASS
 port: 7890
 socks-port: 7891
-mixed-port: 7893
 redir-port: 7892
+mixed-port: 7893
 tproxy-port: 7895
 geodata-mode: true
 geodata-loader: memconservative
@@ -165,6 +165,7 @@ log-level: silent
 ipv6: false
 unified-delay: false
 global-client-fingerprint: none
+keep-alive-interval: 15
 external-controller: 0.0.0.0:9090
 external-ui: "/usr/share/openclash/ui"
 secret: "123456"
