@@ -2,6 +2,7 @@ payload:
   - DST-PORT,21
   - DST-PORT,22
   - DST-PORT,23
+  - DST-PORT,25
   - DST-PORT,53
   - DST-PORT,80
   - DST-PORT,81
@@ -12,6 +13,7 @@ payload:
   - DST-PORT,194
   - DST-PORT,443
   - DST-PORT,465
+  - DST-PORT,548
   - DST-PORT,587
   - DST-PORT,853
   - DST-PORT,993
