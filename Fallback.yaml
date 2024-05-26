@@ -424,6 +424,8 @@ rules:
 - DST-PORT,5010/6650/8011/8700/20000/25000/29134/30000,Koneksi PortGames,udp
 #RPG Toram Online
 - DST-PORT,30100,Koneksi PortGames,udp
+#Wuthering Waves
+- DST-PORT,11003-21909,Koneksi PortGames,udp
 #for ALL ports games
 - AND,((NOT,((RULE-SET,rule_umum))),(NETWORK,TCP)),Koneksi PortGames
 - AND,((NOT,((RULE-SET,rule_umum))),(NETWORK,UDP)),Koneksi PortGames
